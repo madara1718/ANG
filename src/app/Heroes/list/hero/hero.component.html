@@ -1,0 +1,36 @@
+<p>hero list works!</p>
+
+<button class="btn btn-primary"  (click)="resetList()">Reset list</button>
+
+<button class="btn btn-danger mx-2" (click)="deleteLastUchiha()" [disabled]="condition"  >Delete last Uchiha</button>
+
+<ng-template *ngIf="condition==true">
+  <h1 class="text-danger">No se ha borrado nada</h1>
+</ng-template>
+
+
+
+  @if(uchihaDeleted){
+   <h1 class="text-danger">{{uchihaDeleted}}</h1>
+  }
+
+
+
+<ng-template &>
+  <h1 class="text-danger">No se ha borrado nada</h1>
+</ng-template>
+
+<ul class="mt-2 list-group">
+
+
+  <!-- <li class="list-group-item"*ngFor="let item of uchihas">{{item}}</li> //forma tradicional -->
+  @for (item of uchihas; track $index) {
+  <!-- //forma nueva -->
+  <li class="list-group-item">
+    {{item}}
+  </li>
+  }
+
+
+
+</ul>

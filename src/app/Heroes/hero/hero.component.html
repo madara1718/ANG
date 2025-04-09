@@ -1,0 +1,21 @@
+ <h1>{{name}}</h1>
+
+ <h2>Alias: The Hero of Konoha</h2>
+
+<dl>
+
+@for (jutsu of types; track $index) {
+  <td>{{qty[$index]}} Jutsu: </td>
+  <dd>{{jutsu}}</dd>
+}
+
+<h2>Agrandado: {{upperName}}</h2>
+
+<h2>Principal: {{getFirstJutsu()}}</h2>
+</dl>
+
+<button class="btn btn-primary mx-2" (click)="changeName('Sasuke')">Sasuke</button>
+<button class="btn btn-danger mx-2" (click)="changeName('Naruto')">Naruto</button>
+
+<div *ngIf="name == 'Naruto'">{{random1}}</div>
+<div *ngIf="name == 'Sasuke'">{{random2}}</div>

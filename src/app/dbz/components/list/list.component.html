@@ -1,0 +1,34 @@
+<h4>List</h4>
+<ul class="list-group">
+  @for (character of characterList; track $index;
+  let isFirst = $first;
+  let isLast = $last,
+  let isEven = $even,
+  let isOdd = $odd
+  ) {
+
+  <li class="list-group-item mb-1 d-flex justify-content-between align-items-center">
+    <!-- [ngClass]="{
+      'list-group-item-dark':$odd,
+      'list-group-item-primary':$even
+    }" -->
+
+
+    <div>
+
+      <span class="text-primary">{{$index+1}}) Name: {{character.name}} -</span>
+
+      <strong> Power: {{character.powerLevel}}</strong>
+
+      <span class="text-secondary"> Id: {{character.id}}</span>
+
+      <!-- <hr>
+
+      <p class="text-danger">{{isFirst? 'sí':'no'}}</p> -->
+    </div>
+
+    <button class="btn btn-danger" (click)="deleteCharacter(character.id!)"> X </button>
+
+  </li>
+  }
+</ul>
